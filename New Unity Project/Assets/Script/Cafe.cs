@@ -59,6 +59,18 @@ public class Cafe : MonoBehaviour
                     if (ingrediente[i].cuanto > bebida.ingrediente[i].cuanto)
                     {
                         putuacion += bebida.ingrediente[i].cuanto;
+
+                        if (ingrediente[i].cuanto <= 5)
+                        {
+                            putuacion += bebida.ingrediente[i].cuanto;
+                            putuacion -= ingrediente[i].cuanto;
+
+                            if(putuacion <= 0)
+                            {
+                                putuacion = 0;
+                                putuacion += 1;
+                            }
+                        }
                     }
                     else
                     {
@@ -72,7 +84,7 @@ public class Cafe : MonoBehaviour
             }
         }
 
-        textNota.text = nota.ToString();
+        textNota.text = nota.ToString("f0");
     }
 
     public void Ingrediente(string ing)
