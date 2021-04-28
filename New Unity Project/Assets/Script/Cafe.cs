@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Ingredientes
@@ -20,14 +21,12 @@ public class Cafe : MonoBehaviour
 
     public float putuacion;
     public float bebidaTotal;
-    public bool evaluar;
+    public bool sacarNota;
 
     [Space(20)]
 
-    public int suma;
     public Ingredientes[] ingrediente;
     public Image[] imageIngrediente;
-    public TextMeshProUGUI textNota;
     Color tazaColorOriginal;
 
     [Space(20)]
@@ -36,6 +35,8 @@ public class Cafe : MonoBehaviour
 
     void Start()
     {
+        bebida = GM.gm.bebidaActual;
+
         tazaColorOriginal = imageIngrediente[0].color;
 
         bebida.total = 0;
@@ -46,11 +47,21 @@ public class Cafe : MonoBehaviour
     void Update()
     {
         Evaluacion();
+
+        GM.gm.colorTazaOriginal = tazaColorOriginal;
+
+        GM.gm.colorIngredientes[0] = imageIngrediente[0].color;
+        GM.gm.colorIngredientes[1] = imageIngrediente[1].color;
+        GM.gm.colorIngredientes[2] = imageIngrediente[2].color;
+        GM.gm.colorIngredientes[3] = imageIngrediente[3].color;
+        GM.gm.colorIngredientes[4] = imageIngrediente[4].color;
+
+        nota = GM.gm.nota;
     }
 
     void Evaluacion()
     {
-        if(evaluar == true)
+        if(sacarNota == true)
         {
             for (var i = 0; i < ingrediente.Length; i++)
             {
@@ -78,26 +89,43 @@ public class Cafe : MonoBehaviour
                     }
                 }
 
-                nota = putuacion / bebidaTotal * 10;
+                if (bebida.ingrediente[i].cuanto == 0)
+                {
+                    if(ingrediente[i].cuanto > 0)
+                    {
+                        putuacion -= 1f;
+                    }
+                }
 
-                evaluar = false;
+                GM.gm.nota = putuacion / bebidaTotal * 10;
+
+                if (GM.gm.nota < 0f)
+                {
+                    GM.gm.nota = 0f;
+                }
+                if (GM.gm.nota > 10f)
+                {
+                    GM.gm.nota = 10f;
+                }
+
+                SceneManager.LoadScene("Escenario 2");
+
+                sacarNota = false;
             }
         }
-
-        textNota.text = nota.ToString("f0");
     }
 
     public void Ingrediente(string ing)
     {
-        if(suma < 5)
+        if(GM.gm.suma < 5)
         {
             for (var i = 0; i < ingrediente.Length; i++)
             {
                 if (ingrediente[i].name == ing)
                 {
                     ingrediente[i].cuanto += 1;
-                    imageIngrediente[suma].color = ingrediente[i].color;
-                    suma += 1;
+                    imageIngrediente[GM.gm.suma].color = ingrediente[i].color;
+                    GM.gm.suma += 1;
                 }
             }
         }
@@ -117,12 +145,12 @@ public class Cafe : MonoBehaviour
             nota = 0;
             putuacion = 0;
             ingrediente[i].cuanto = 0;
-            suma = 0;
+            GM.gm.suma = 0;
         }
     }
 
     public void Calificar()
     {
-        evaluar = true;
+        sacarNota = true;
     }
 }

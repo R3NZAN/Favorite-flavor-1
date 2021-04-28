@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4597416241652756334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4597416241652756332}
+  - component: {fileID: 4597416241652756335}
+  m_Layer: 0
+  m_Name: GAME MANAGER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4597416241652756332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4597416241652756334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 171.6975, y: 119.21826, z: -371.59375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4597416241652756335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4597416241652756334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3337f425e75ec2d43911b957be1fdcf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nota: 0
+  evaluar: 0
+  nivel: 0
+  personajeActual: 0
+  bebidaActual: {fileID: 0}
+  personaje:
+  - nombre: TOMI
+    servido: 0
+    nivelDeBebidas:
+    - {fileID: 11400000, guid: 847aceb1dcfabd541bb7c2a68546ebf1, type: 2}
+    - {fileID: 11400000, guid: d64ffa144c2fb904bacd1863a3b008f0, type: 2}
+    - {fileID: 11400000, guid: 5696400873438af47b6bc8382b4c869b, type: 2}
+    voz: {fileID: 8300000, guid: edbe2c64ea8b0f24298dc478eff76c71, type: 3}
+    cancion: {fileID: 8300000, guid: be0dd3525a7a2dd4683c6de612c1fb8a, type: 3}
+    emocion: 0
+    noLeche: 0
+    dialogo:
+    - 'No me gusto '
+    - Safa
+    - Me encanto
+  - nombre: ROMAN
+    servido: 0
+    nivelDeBebidas:
+    - {fileID: 11400000, guid: 64110502511fdb848be712d86b4cebe1, type: 2}
+    - {fileID: 11400000, guid: 1c406d3023f084141abd4211a5d80b1d, type: 2}
+    - {fileID: 11400000, guid: 7b5fd7bc862e30f41aa91c22a65fb8d3, type: 2}
+    voz: {fileID: 8300000, guid: bc158b2b04cb5a1489fbb9929314f802, type: 3}
+    cancion: {fileID: 8300000, guid: c3856dfd023354a4fa98f31964e70530, type: 3}
+    emocion: 0
+    noLeche: 0
+    dialogo:
+    - 
+    - 
+    - 
+  - nombre: AZUL
+    servido: 0
+    nivelDeBebidas:
+    - {fileID: 11400000, guid: 3dec8da1b02082046bed94f96100cf1e, type: 2}
+    - {fileID: 11400000, guid: 13367187e9de0264daafc972e55717aa, type: 2}
+    - {fileID: 11400000, guid: d7adb6df4ad8ef84082728e51d13b005, type: 2}
+    voz: {fileID: 8300000, guid: 9039367f37cdc144494124bf2fe8d992, type: 3}
+    cancion: {fileID: 8300000, guid: 1f4803985c7fe8d469d1fd3f6c56c990, type: 3}
+    emocion: 0
+    noLeche: 0
+    dialogo:
+    - 
+    - 
+    - 
+  - nombre: ELSA
+    servido: 0
+    nivelDeBebidas:
+    - {fileID: 11400000, guid: b794029d1165b5f459600ae89c964bf6, type: 2}
+    - {fileID: 11400000, guid: 87ec2bab16ca4f54ab33a5646063d5df, type: 2}
+    - {fileID: 11400000, guid: 46e7bd98641c1d34b9ed1c22632e6ff5, type: 2}
+    voz: {fileID: 8300000, guid: 46c16c3f0bbdb0e45867b7b3527b6ae6, type: 3}
+    cancion: {fileID: 8300000, guid: 45fa16a770caec94d9c146074879964d, type: 3}
+    emocion: 0
+    noLeche: 1
+    dialogo:
+    - 
+    - 
+    - 
+  suma: 0
+  colorIngredientes:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  colorTazaOriginal: {r: 0, g: 0, b: 0, a: 0}
