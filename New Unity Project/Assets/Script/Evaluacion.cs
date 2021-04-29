@@ -32,11 +32,11 @@ public class Evaluacion : MonoBehaviour
 
         anim = personaje.GetComponent<Animator>();
 
-        imageIngrediente[0].color = GM.gm.colorIngredientes[0];
-        imageIngrediente[1].color = GM.gm.colorIngredientes[1];
-        imageIngrediente[2].color = GM.gm.colorIngredientes[2];
-        imageIngrediente[3].color = GM.gm.colorIngredientes[3];
-        imageIngrediente[4].color = GM.gm.colorIngredientes[4];
+        imageIngrediente[0].sprite = GM.gm.spriteIngredientes[0];
+        imageIngrediente[1].sprite = GM.gm.spriteIngredientes[1];
+        imageIngrediente[2].sprite = GM.gm.spriteIngredientes[2];
+        imageIngrediente[3].sprite = GM.gm.spriteIngredientes[3];
+        imageIngrediente[4].sprite = GM.gm.spriteIngredientes[4];
 
         GM.gm.personaje[GM.gm.personajeActual].emocion = 0;
 
@@ -124,22 +124,22 @@ public class Evaluacion : MonoBehaviour
     {   
         yield return new WaitForSecondsRealtime(1.5f);
 
-        imageIngrediente[4].color = GM.gm.colorTazaOriginal;
+        imageIngrediente[4].color = GM.gm.colorSinVer;
 
         yield return new WaitForSecondsRealtime(tiempo);
 
-        imageIngrediente[3].color = GM.gm.colorTazaOriginal;
+        imageIngrediente[3].color = GM.gm.colorSinVer;
 
         yield return new WaitForSecondsRealtime(tiempo);
 
-        imageIngrediente[2].color = GM.gm.colorTazaOriginal;
+        imageIngrediente[2].color = GM.gm.colorSinVer;
 
         yield return new WaitForSecondsRealtime(tiempo);
 
-        imageIngrediente[1].color = GM.gm.colorTazaOriginal;
+        imageIngrediente[1].color = GM.gm.colorSinVer;
 
         yield return new WaitForSecondsRealtime(tiempo);
 
-        imageIngrediente[0].color = GM.gm.colorTazaOriginal;
+        imageIngrediente[0].color = GM.gm.colorSinVer;
     }
 }

@@ -10,7 +10,7 @@ public class Ingredientes
 {
     public string name;
     public int cuanto;
-    public Color color;
+    public Sprite sprite;
 }
 
 public class Cafe : MonoBehaviour
@@ -27,7 +27,6 @@ public class Cafe : MonoBehaviour
 
     public Ingredientes[] ingrediente;
     public Image[] imageIngrediente;
-    Color tazaColorOriginal;
 
     [Space(20)]
 
@@ -37,7 +36,11 @@ public class Cafe : MonoBehaviour
     {
         bebida = GM.gm.bebidaActual;
 
-        tazaColorOriginal = imageIngrediente[0].color;
+        imageIngrediente[0].color = GM.gm.colorSinVer;
+        imageIngrediente[1].color = GM.gm.colorSinVer;
+        imageIngrediente[2].color = GM.gm.colorSinVer;
+        imageIngrediente[3].color = GM.gm.colorSinVer;
+        imageIngrediente[4].color = GM.gm.colorSinVer;
 
         bebida.total = 0;
         bebida.Suma();
@@ -48,13 +51,11 @@ public class Cafe : MonoBehaviour
     {
         Evaluacion();
 
-        GM.gm.colorTazaOriginal = tazaColorOriginal;
-
-        GM.gm.colorIngredientes[0] = imageIngrediente[0].color;
-        GM.gm.colorIngredientes[1] = imageIngrediente[1].color;
-        GM.gm.colorIngredientes[2] = imageIngrediente[2].color;
-        GM.gm.colorIngredientes[3] = imageIngrediente[3].color;
-        GM.gm.colorIngredientes[4] = imageIngrediente[4].color;
+        GM.gm.spriteIngredientes[0] = imageIngrediente[0].sprite;
+        GM.gm.spriteIngredientes[1] = imageIngrediente[1].sprite;
+        GM.gm.spriteIngredientes[2] = imageIngrediente[2].sprite;
+        GM.gm.spriteIngredientes[3] = imageIngrediente[3].sprite;
+        GM.gm.spriteIngredientes[4] = imageIngrediente[4].sprite;
 
         nota = GM.gm.nota;
     }
@@ -124,7 +125,8 @@ public class Cafe : MonoBehaviour
                 if (ingrediente[i].name == ing)
                 {
                     ingrediente[i].cuanto += 1;
-                    imageIngrediente[GM.gm.suma].color = ingrediente[i].color;
+                    imageIngrediente[GM.gm.suma].sprite = ingrediente[i].sprite;
+                    imageIngrediente[GM.gm.suma].color = GM.gm.colorVer;
                     GM.gm.suma += 1;
                 }
             }
@@ -132,15 +134,20 @@ public class Cafe : MonoBehaviour
 
     }
 
+    public void IngredienteSonido(AudioClip clip)
+    {
+        SM.sm.PlayOneShotSE(clip);
+    }
+
     public void Resetear()
     {
         for (var i = 0; i < ingrediente.Length; i++)
         {
-            imageIngrediente[0].color = tazaColorOriginal;  
-            imageIngrediente[1].color = tazaColorOriginal;
-            imageIngrediente[2].color = tazaColorOriginal;
-            imageIngrediente[3].color = tazaColorOriginal;
-            imageIngrediente[4].color = tazaColorOriginal;
+            imageIngrediente[0].color = GM.gm.colorSinVer;  
+            imageIngrediente[1].color = GM.gm.colorSinVer;
+            imageIngrediente[2].color = GM.gm.colorSinVer;
+            imageIngrediente[3].color = GM.gm.colorSinVer;
+            imageIngrediente[4].color = GM.gm.colorSinVer;
 
             nota = 0;
             putuacion = 0;

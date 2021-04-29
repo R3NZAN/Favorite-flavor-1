@@ -15,8 +15,9 @@ public class GM : MonoBehaviour
     public Personajes[] personaje;
     public int suma;
 
-    public Color[] colorIngredientes;
-    public Color colorTazaOriginal;
+    public Sprite[] spriteIngredientes;
+    public Color colorSinVer;
+    public Color colorVer;
 
     void Awake()
     {

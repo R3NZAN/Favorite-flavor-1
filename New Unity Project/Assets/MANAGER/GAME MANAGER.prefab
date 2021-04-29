@@ -74,9 +74,9 @@ MonoBehaviour:
     emocion: 0
     noLeche: 0
     dialogo:
-    - 
-    - 
-    - 
+    - ESTA HORRIBLE!
+    - Esta bueno pero puede mejorar
+    - OAAAA! ESTA BUENISIMO!
   - nombre: AZUL
     servido: 0
     nivelDeBebidas:
@@ -94,8 +94,8 @@ MonoBehaviour:
   - nombre: ELSA
     servido: 0
     nivelDeBebidas:
-    - {fileID: 11400000, guid: b794029d1165b5f459600ae89c964bf6, type: 2}
     - {fileID: 11400000, guid: 87ec2bab16ca4f54ab33a5646063d5df, type: 2}
+    - {fileID: 11400000, guid: b794029d1165b5f459600ae89c964bf6, type: 2}
     - {fileID: 11400000, guid: 46e7bd98641c1d34b9ed1c22632e6ff5, type: 2}
     voz: {fileID: 8300000, guid: 46c16c3f0bbdb0e45867b7b3527b6ae6, type: 3}
     cancion: {fileID: 8300000, guid: 45fa16a770caec94d9c146074879964d, type: 3}
@@ -106,10 +106,11 @@ MonoBehaviour:
     - 
     - 
   suma: 0
-  colorIngredientes:
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  colorTazaOriginal: {r: 0, g: 0, b: 0, a: 0}
+  spriteIngredientes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  colorSinVer: {r: 1, g: 1, b: 1, a: 0}
+  colorVer: {r: 1, g: 1, b: 1, a: 1}
