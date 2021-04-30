@@ -16,6 +16,7 @@ public class GM : MonoBehaviour
     public int suma;
 
     public Sprite[] spriteIngredientes;
+    public Color[] colorIngredientes;
     public Color colorSinVer;
     public Color colorVer;
 

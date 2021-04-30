@@ -6,7 +6,9 @@ public class SM : MonoBehaviour
 {
     public static SM sm;
 
-    public AudioSource[] AS; // 0.BGM , 1.BGS , 2.SE
+    public AudioSource[] AS; // 0.BGM , 1.BGS , 2.SEç
+
+    public Animator anim;
 
     void Awake()
     {

@@ -55,7 +55,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 847aceb1dcfabd541bb7c2a68546ebf1, type: 2}
     - {fileID: 11400000, guid: d64ffa144c2fb904bacd1863a3b008f0, type: 2}
     - {fileID: 11400000, guid: 5696400873438af47b6bc8382b4c869b, type: 2}
-    voz: {fileID: 8300000, guid: edbe2c64ea8b0f24298dc478eff76c71, type: 3}
+    voz: {fileID: 8300000, guid: 35de4960dd2626643b4c973f703f77a0, type: 3}
+    bebiendo: {fileID: 8300000, guid: 8aa45d0994cfe9243bfe89f02b60692c, type: 3}
     cancion: {fileID: 8300000, guid: be0dd3525a7a2dd4683c6de612c1fb8a, type: 3}
     emocion: 0
     noLeche: 0
@@ -69,7 +70,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 64110502511fdb848be712d86b4cebe1, type: 2}
     - {fileID: 11400000, guid: 1c406d3023f084141abd4211a5d80b1d, type: 2}
     - {fileID: 11400000, guid: 7b5fd7bc862e30f41aa91c22a65fb8d3, type: 2}
-    voz: {fileID: 8300000, guid: bc158b2b04cb5a1489fbb9929314f802, type: 3}
+    voz: {fileID: 8300000, guid: 51797a3596c15e64799787bf8fe325ff, type: 3}
+    bebiendo: {fileID: 8300000, guid: 215e5f0b0b0b0bf47b772679712cb7df, type: 3}
     cancion: {fileID: 8300000, guid: c3856dfd023354a4fa98f31964e70530, type: 3}
     emocion: 0
     noLeche: 0
@@ -83,7 +85,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 3dec8da1b02082046bed94f96100cf1e, type: 2}
     - {fileID: 11400000, guid: 13367187e9de0264daafc972e55717aa, type: 2}
     - {fileID: 11400000, guid: d7adb6df4ad8ef84082728e51d13b005, type: 2}
-    voz: {fileID: 8300000, guid: 9039367f37cdc144494124bf2fe8d992, type: 3}
+    voz: {fileID: 8300000, guid: 744bfaab626395a489a03a3ec4c85da2, type: 3}
+    bebiendo: {fileID: 8300000, guid: d4171f5a57a9ad24fbceaa26009e5986, type: 3}
     cancion: {fileID: 8300000, guid: 1f4803985c7fe8d469d1fd3f6c56c990, type: 3}
     emocion: 0
     noLeche: 0
@@ -97,7 +100,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 87ec2bab16ca4f54ab33a5646063d5df, type: 2}
     - {fileID: 11400000, guid: b794029d1165b5f459600ae89c964bf6, type: 2}
     - {fileID: 11400000, guid: 46e7bd98641c1d34b9ed1c22632e6ff5, type: 2}
-    voz: {fileID: 8300000, guid: 46c16c3f0bbdb0e45867b7b3527b6ae6, type: 3}
+    voz: {fileID: 8300000, guid: d1dd30ddfa7a9ca4bb4651ddd86a66f5, type: 3}
+    bebiendo: {fileID: 8300000, guid: 74c3ca3a0d148fc43be991f69fa6849c, type: 3}
     cancion: {fileID: 8300000, guid: 45fa16a770caec94d9c146074879964d, type: 3}
     emocion: 0
     noLeche: 1
@@ -112,5 +116,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  colorIngredientes:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
   colorSinVer: {r: 1, g: 1, b: 1, a: 0}
   colorVer: {r: 1, g: 1, b: 1, a: 1}

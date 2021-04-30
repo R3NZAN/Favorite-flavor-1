@@ -38,9 +38,15 @@ public class Evaluacion : MonoBehaviour
         imageIngrediente[3].sprite = GM.gm.spriteIngredientes[3];
         imageIngrediente[4].sprite = GM.gm.spriteIngredientes[4];
 
+        imageIngrediente[0].color = GM.gm.colorIngredientes[0];
+        imageIngrediente[1].color = GM.gm.colorIngredientes[1];
+        imageIngrediente[2].color = GM.gm.colorIngredientes[2];
+        imageIngrediente[3].color = GM.gm.colorIngredientes[3];
+        imageIngrediente[4].color = GM.gm.colorIngredientes[4];
+
         GM.gm.personaje[GM.gm.personajeActual].emocion = 0;
 
-        StartCoroutine(WriteText("Haber como te quedo el cafe...", velHablar));
+        StartCoroutine(WriteText("Haber como te quedo...", velHablar));
 
         textNombre.text = GM.gm.personaje[GM.gm.personajeActual].nombre;
 
@@ -122,24 +128,49 @@ public class Evaluacion : MonoBehaviour
     }
     IEnumerator Tomando (float tiempo)
     {   
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(1.5f); //////////////////////////////////////////////////////////////
+        
+        if(GM.gm.suma >= 5)
+        {
+            SM.sm.PlaySE(GM.gm.personaje[GM.gm.personajeActual].bebiendo);
+        }
 
         imageIngrediente[4].color = GM.gm.colorSinVer;
 
-        yield return new WaitForSecondsRealtime(tiempo);
+        yield return new WaitForSecondsRealtime(tiempo);  //////////////////////////////////////////////////////////////
+
+        if (GM.gm.suma >= 4)
+        {
+            SM.sm.PlaySE(GM.gm.personaje[GM.gm.personajeActual].bebiendo);
+        }
 
         imageIngrediente[3].color = GM.gm.colorSinVer;
 
-        yield return new WaitForSecondsRealtime(tiempo);
+        yield return new WaitForSecondsRealtime(tiempo);  //////////////////////////////////////////////////////////////
+
+        if (GM.gm.suma >= 3)
+        {
+            SM.sm.PlaySE(GM.gm.personaje[GM.gm.personajeActual].bebiendo);
+        }
 
         imageIngrediente[2].color = GM.gm.colorSinVer;
 
-        yield return new WaitForSecondsRealtime(tiempo);
+        yield return new WaitForSecondsRealtime(tiempo);  //////////////////////////////////////////////////////////////
+
+        if (GM.gm.suma >= 2)
+        {
+            SM.sm.PlaySE(GM.gm.personaje[GM.gm.personajeActual].bebiendo);
+        }
 
         imageIngrediente[1].color = GM.gm.colorSinVer;
 
-        yield return new WaitForSecondsRealtime(tiempo);
+        yield return new WaitForSecondsRealtime(tiempo);  //////////////////////////////////////////////////////////////
 
-        imageIngrediente[0].color = GM.gm.colorSinVer;
+        if (GM.gm.suma >= 1)
+        {
+            SM.sm.PlaySE(GM.gm.personaje[GM.gm.personajeActual].bebiendo);
+        }
+
+        imageIngrediente[0].color = GM.gm.colorSinVer; 
     }
 }

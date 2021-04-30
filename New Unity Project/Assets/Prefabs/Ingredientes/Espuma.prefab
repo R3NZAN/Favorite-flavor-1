@@ -130,3 +130,15 @@ MonoBehaviour:
           m_StringArgument: Espuma
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: IngredienteSonido
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 618d093d97c28d849a2bf2a0e39bca06,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2

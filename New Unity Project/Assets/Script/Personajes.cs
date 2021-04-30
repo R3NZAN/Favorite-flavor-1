@@ -11,7 +11,9 @@ public class Personajes
     public bool servido;
     public CafeCreation[] nivelDeBebidas;
     public AudioClip voz;
+    public AudioClip bebiendo;
     public AudioClip cancion;
+    public bool tazaActive;
     public int emocion;
     public bool noLeche;
     public string[] dialogo;

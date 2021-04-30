@@ -30,10 +30,15 @@ public class Cafe : MonoBehaviour
 
     [Space(20)]
 
+    public AudioClip clipTazaNegado;
+    public GameObject taza;
     public CafeCreation bebida;
+
 
     void Start()
     {
+        //GM.gm.personajeActual = 4;
+
         bebida = GM.gm.bebidaActual;
 
         imageIngrediente[0].color = GM.gm.colorSinVer;
@@ -47,7 +52,7 @@ public class Cafe : MonoBehaviour
         bebidaTotal = bebida.total;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Evaluacion();
 
@@ -56,6 +61,12 @@ public class Cafe : MonoBehaviour
         GM.gm.spriteIngredientes[2] = imageIngrediente[2].sprite;
         GM.gm.spriteIngredientes[3] = imageIngrediente[3].sprite;
         GM.gm.spriteIngredientes[4] = imageIngrediente[4].sprite;
+
+        GM.gm.colorIngredientes[0] = imageIngrediente[0].color;
+        GM.gm.colorIngredientes[1] = imageIngrediente[1].color;
+        GM.gm.colorIngredientes[2] = imageIngrediente[2].color;
+        GM.gm.colorIngredientes[3] = imageIngrediente[3].color;
+        GM.gm.colorIngredientes[4] = imageIngrediente[4].color;
 
         nota = GM.gm.nota;
     }
@@ -139,6 +150,28 @@ public class Cafe : MonoBehaviour
         SM.sm.PlayOneShotSE(clip);
     }
 
+    public void AQuienLeServis(int per)
+    {
+        if (GM.gm.personaje[per].servido == false)
+        {
+            GM.gm.personajeActual = per;
+
+            if(GM.gm.personaje[per].tazaActive == false)
+            {
+                taza.SetActive(true);
+
+                SM.sm.PlayBGM(GM.gm.personaje[per].cancion);
+
+                GM.gm.personaje[per].tazaActive = true;
+            }
+        }
+        else
+        {
+            SM.sm.PlayOneShotSE(clipTazaNegado);
+            taza.SetActive(false);
+        }
+    }
+
     public void Resetear()
     {
         for (var i = 0; i < ingrediente.Length; i++)
@@ -160,4 +193,36 @@ public class Cafe : MonoBehaviour
     {
         sacarNota = true;
     }
+
+    /*IEnumerator Musica (int per)
+    {
+        if(cancionActual == true)
+        {
+            SM.sm.AS[0].volume -= Time.deltaTime;
+
+            if (SM.sm.AS[0].volume <= 0f)
+            {
+                cancionQueViene = true;
+                cancionActual = false;
+            }
+        }
+
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        if (cancionQueViene == true)
+        {
+            if(cancion == true)
+            {
+                SM.sm.PlayBGM(GM.gm.personaje[per].cancion);
+                cancion = false;
+            }
+
+            SM.sm.AS[0].volume += Time.deltaTime;
+
+            if (SM.sm.AS[0].volume >= 1f)
+            {
+                cambiarDeCancion = false;
+            }
+        }
+    }*/
 }
